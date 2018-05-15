@@ -1,0 +1,6 @@
+module Pods_fun [system] {
+  umbrella header "Pods-fun-umbrella.h"
+
+  export *
+  module * { export * }
+}

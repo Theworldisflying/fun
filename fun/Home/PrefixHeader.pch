@@ -12,6 +12,28 @@
 #import "MJExtension.h"
 #import "MJRefresh.h"
 
+#import "Masonry.h"
+
+#import "UIView+Extension.h"
+#import "AFNManager.h"
+
+#import <SDWebImage/UIImageView+WebCache.h>
+
+#import "GetUrlImageSize.h"
+
+#import "SVProgressHUD.h"
+#import "MBProgressHUD.h"
+
+
+#define JokesUrl  @"http://route.showapi.com/341-1"
+#define ImgUrl  @"http://route.showapi.com/107-33"
+#define GifUrl  @"http://route.showapi.com/341-3"
+#define Assin  @"6b0b01cb2feb465ab842b693d1fae670"
+#define Appid  64648
+
+#define Height [UIScreen mainScreen].bounds.size.height
+#define Width [UIScreen mainScreen].bounds.size.width
+
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 

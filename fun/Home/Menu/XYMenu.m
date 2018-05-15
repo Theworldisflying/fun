@@ -174,7 +174,7 @@ static const CGFloat XYMenuItemHeight = 60; // item高度
         weakSelf.menuView.frame = weakSelf.menuInitRect;
         weakSelf.menuView.alpha = 0.1;
     } completion:^(BOOL finished) {
-        _isDismiss = NO;
+        self.isDismiss = NO;
         [weakSelf removeFromSuperview];
     }];
 }

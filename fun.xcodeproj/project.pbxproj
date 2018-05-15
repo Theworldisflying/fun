@@ -24,6 +24,23 @@
 		EC1579AD20A59D910023FB1F /* UIView+XYMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1579A820A59D910023FB1F /* UIView+XYMenu.m */; };
 		EC1579AE20A59D910023FB1F /* XYMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1579A920A59D910023FB1F /* XYMenuItem.m */; };
 		EC1579AF20A59D910023FB1F /* XYMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1579AA20A59D910023FB1F /* XYMenuView.m */; };
+		EC21003520A96C4A0096B18C /* AFNManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC21003420A96C4A0096B18C /* AFNManager.m */; };
+		EC21003820A974FC0096B18C /* JokesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC21003720A974FC0096B18C /* JokesModel.m */; };
+		EC21004020A97F5E0096B18C /* JokesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC21003F20A97F5E0096B18C /* JokesCell.m */; };
+		EC21004220A980620096B18C /* MyContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC21004120A980620096B18C /* MyContentViewController.m */; };
+		EC21004820A987220096B18C /* PictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC21004720A987220096B18C /* PictureModel.m */; };
+		EC21004B20A987860096B18C /* PictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC21004A20A987860096B18C /* PictureCell.m */; };
+		EC22003D20AA797000BA6263 /* GifCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22003C20AA797000BA6263 /* GifCell.m */; };
+		EC22004020AA7ABF00BA6263 /* GifModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22003F20AA7ABF00BA6263 /* GifModel.m */; };
+		EC22004320AA7D5A00BA6263 /* GetUrlImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22004220AA7D5A00BA6263 /* GetUrlImageSize.m */; };
+		EC22004D20AABCA700BA6263 /* PickerShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22004C20AABCA700BA6263 /* PickerShowView.m */; };
+		EC22005020AAC03C00BA6263 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22004F20AAC03C00BA6263 /* MBProgressHUD.m */; };
+		EC22005320AAC25200BA6263 /* CBSSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22005220AAC25200BA6263 /* CBSSegmentViewController.m */; };
+		EC22005C20AAC6EB00BA6263 /* CleanCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22005B20AAC6EB00BA6263 /* CleanCache.m */; };
+		EC22005F20AAC75700BA6263 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22005E20AAC75700BA6263 /* PersonViewController.m */; };
+		EC229A8320A93AAE00D15750 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = EC229A8220A93AAE00D15750 /* UIView+Extension.m */; };
+		EC229A8B20A9566D00D15750 /* MyImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC229A8A20A9566D00D15750 /* MyImageViewController.m */; };
+		EC229A8E20A9567C00D15750 /* MygifImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC229A8D20A9567C00D15750 /* MygifImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +98,40 @@
 		EC1579A820A59D910023FB1F /* UIView+XYMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYMenu.m"; sourceTree = "<group>"; };
 		EC1579A920A59D910023FB1F /* XYMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMenuItem.m; sourceTree = "<group>"; };
 		EC1579AA20A59D910023FB1F /* XYMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMenuView.m; sourceTree = "<group>"; };
+		EC21003320A96C4A0096B18C /* AFNManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNManager.h; sourceTree = "<group>"; };
+		EC21003420A96C4A0096B18C /* AFNManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNManager.m; sourceTree = "<group>"; };
+		EC21003620A974FC0096B18C /* JokesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JokesModel.h; sourceTree = "<group>"; };
+		EC21003720A974FC0096B18C /* JokesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JokesModel.m; sourceTree = "<group>"; };
+		EC21003E20A97F5E0096B18C /* JokesCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JokesCell.h; sourceTree = "<group>"; };
+		EC21003F20A97F5E0096B18C /* JokesCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JokesCell.m; sourceTree = "<group>"; };
+		EC21004120A980620096B18C /* MyContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyContentViewController.m; sourceTree = "<group>"; };
+		EC21004620A987220096B18C /* PictureModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PictureModel.h; sourceTree = "<group>"; };
+		EC21004720A987220096B18C /* PictureModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureModel.m; sourceTree = "<group>"; };
+		EC21004920A987860096B18C /* PictureCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PictureCell.h; sourceTree = "<group>"; };
+		EC21004A20A987860096B18C /* PictureCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureCell.m; sourceTree = "<group>"; };
+		EC22003B20AA797000BA6263 /* GifCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GifCell.h; sourceTree = "<group>"; };
+		EC22003C20AA797000BA6263 /* GifCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GifCell.m; sourceTree = "<group>"; };
+		EC22003E20AA7ABF00BA6263 /* GifModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GifModel.h; sourceTree = "<group>"; };
+		EC22003F20AA7ABF00BA6263 /* GifModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GifModel.m; sourceTree = "<group>"; };
+		EC22004120AA7D5A00BA6263 /* GetUrlImageSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetUrlImageSize.h; sourceTree = "<group>"; };
+		EC22004220AA7D5A00BA6263 /* GetUrlImageSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetUrlImageSize.m; sourceTree = "<group>"; };
+		EC22004B20AABCA700BA6263 /* PickerShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickerShowView.h; sourceTree = "<group>"; };
+		EC22004C20AABCA700BA6263 /* PickerShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickerShowView.m; sourceTree = "<group>"; };
+		EC22004E20AAC03C00BA6263 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		EC22004F20AAC03C00BA6263 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		EC22005120AAC25200BA6263 /* CBSSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBSSegmentViewController.h; sourceTree = "<group>"; };
+		EC22005220AAC25200BA6263 /* CBSSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBSSegmentViewController.m; sourceTree = "<group>"; };
+		EC22005A20AAC6EB00BA6263 /* CleanCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanCache.h; sourceTree = "<group>"; };
+		EC22005B20AAC6EB00BA6263 /* CleanCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanCache.m; sourceTree = "<group>"; };
+		EC22005D20AAC75700BA6263 /* PersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		EC22005E20AAC75700BA6263 /* PersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
+		EC229A6720A92B6500D15750 /* MyContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyContentViewController.h; sourceTree = "<group>"; };
+		EC229A8120A93AAE00D15750 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		EC229A8220A93AAE00D15750 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		EC229A8920A9566D00D15750 /* MyImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyImageViewController.h; sourceTree = "<group>"; };
+		EC229A8A20A9566D00D15750 /* MyImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyImageViewController.m; sourceTree = "<group>"; };
+		EC229A8C20A9567C00D15750 /* MygifImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MygifImageViewController.h; sourceTree = "<group>"; };
+		EC229A8D20A9567C00D15750 /* MygifImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MygifImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +193,7 @@
 		EC15795420A57DFE0023FB1F /* fun */ = {
 			isa = PBXGroup;
 			children = (
+				EC229A8020A93A6500D15750 /* Others */,
 				EC15798720A581800023FB1F /* Home */,
 				EC15795520A57DFE0023FB1F /* AppDelegate.h */,
 				EC15795620A57DFE0023FB1F /* AppDelegate.m */,
@@ -188,6 +240,14 @@
 		EC15798820A5818A0023FB1F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EC21003E20A97F5E0096B18C /* JokesCell.h */,
+				EC21003F20A97F5E0096B18C /* JokesCell.m */,
+				EC21004920A987860096B18C /* PictureCell.h */,
+				EC21004A20A987860096B18C /* PictureCell.m */,
+				EC22003B20AA797000BA6263 /* GifCell.h */,
+				EC22003C20AA797000BA6263 /* GifCell.m */,
+				EC22004B20AABCA700BA6263 /* PickerShowView.h */,
+				EC22004C20AABCA700BA6263 /* PickerShowView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +259,12 @@
 				EC15799820A5914F0023FB1F /* TextModel.m */,
 				EC15799A20A5994C0023FB1F /* ImageModel.h */,
 				EC15799B20A5994C0023FB1F /* ImageModel.m */,
+				EC21003620A974FC0096B18C /* JokesModel.h */,
+				EC21003720A974FC0096B18C /* JokesModel.m */,
+				EC21004620A987220096B18C /* PictureModel.h */,
+				EC21004720A987220096B18C /* PictureModel.m */,
+				EC22003E20AA7ABF00BA6263 /* GifModel.h */,
+				EC22003F20AA7ABF00BA6263 /* GifModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +274,14 @@
 			children = (
 				EC15798B20A581B00023FB1F /* HomeViewController.h */,
 				EC15798C20A581B00023FB1F /* HomeViewController.m */,
+				EC229A6720A92B6500D15750 /* MyContentViewController.h */,
+				EC21004120A980620096B18C /* MyContentViewController.m */,
+				EC229A8920A9566D00D15750 /* MyImageViewController.h */,
+				EC229A8A20A9566D00D15750 /* MyImageViewController.m */,
+				EC229A8C20A9567C00D15750 /* MygifImageViewController.h */,
+				EC229A8D20A9567C00D15750 /* MygifImageViewController.m */,
+				EC22005D20AAC75700BA6263 /* PersonViewController.h */,
+				EC22005E20AAC75700BA6263 /* PersonViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -217,6 +291,8 @@
 			children = (
 				EC15798F20A589D80023FB1F /* NetWorkingManager.h */,
 				EC15799020A589D80023FB1F /* NetWorkingManager.m */,
+				EC21003320A96C4A0096B18C /* AFNManager.h */,
+				EC21003420A96C4A0096B18C /* AFNManager.m */,
 			);
 			path = NetWorking;
 			sourceTree = "<group>";
@@ -245,6 +321,23 @@
 				EC1579AA20A59D910023FB1F /* XYMenuView.m */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		EC229A8020A93A6500D15750 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				EC22005120AAC25200BA6263 /* CBSSegmentViewController.h */,
+				EC22005220AAC25200BA6263 /* CBSSegmentViewController.m */,
+				EC22004E20AAC03C00BA6263 /* MBProgressHUD.h */,
+				EC22004F20AAC03C00BA6263 /* MBProgressHUD.m */,
+				EC229A8120A93AAE00D15750 /* UIView+Extension.h */,
+				EC229A8220A93AAE00D15750 /* UIView+Extension.m */,
+				EC22004120AA7D5A00BA6263 /* GetUrlImageSize.h */,
+				EC22004220AA7D5A00BA6263 /* GetUrlImageSize.m */,
+				EC22005A20AAC6EB00BA6263 /* CleanCache.h */,
+				EC22005B20AAC6EB00BA6263 /* CleanCache.m */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		F642FA38D391C7AA58BB90D9 /* Pods */ = {
@@ -391,10 +484,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-fun/Pods-fun-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -426,17 +521,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC21003520A96C4A0096B18C /* AFNManager.m in Sources */,
 				EC1579AD20A59D910023FB1F /* UIView+XYMenu.m in Sources */,
 				EC15799520A58AE20023FB1F /* UIImage+Extension.m in Sources */,
+				EC21004B20A987860096B18C /* PictureCell.m in Sources */,
 				EC1579AC20A59D910023FB1F /* UIBarButtonItem+XYMenu.m in Sources */,
+				EC21004020A97F5E0096B18C /* JokesCell.m in Sources */,
+				EC22005320AAC25200BA6263 /* CBSSegmentViewController.m in Sources */,
+				EC22004D20AABCA700BA6263 /* PickerShowView.m in Sources */,
+				EC22004320AA7D5A00BA6263 /* GetUrlImageSize.m in Sources */,
 				EC1579AB20A59D910023FB1F /* XYMenu.m in Sources */,
 				EC1579AF20A59D910023FB1F /* XYMenuView.m in Sources */,
+				EC22004020AA7ABF00BA6263 /* GifModel.m in Sources */,
+				EC22003D20AA797000BA6263 /* GifCell.m in Sources */,
 				EC15796520A57E010023FB1F /* main.m in Sources */,
+				EC22005020AAC03C00BA6263 /* MBProgressHUD.m in Sources */,
+				EC21004820A987220096B18C /* PictureModel.m in Sources */,
 				EC15799C20A5994C0023FB1F /* ImageModel.m in Sources */,
 				EC1579AE20A59D910023FB1F /* XYMenuItem.m in Sources */,
+				EC21004220A980620096B18C /* MyContentViewController.m in Sources */,
 				EC15799120A589D80023FB1F /* NetWorkingManager.m in Sources */,
 				EC15795720A57DFE0023FB1F /* AppDelegate.m in Sources */,
 				EC15799920A5914F0023FB1F /* TextModel.m in Sources */,
+				EC22005C20AAC6EB00BA6263 /* CleanCache.m in Sources */,
+				EC229A8B20A9566D00D15750 /* MyImageViewController.m in Sources */,
+				EC22005F20AAC75700BA6263 /* PersonViewController.m in Sources */,
+				EC229A8320A93AAE00D15750 /* UIView+Extension.m in Sources */,
+				EC21003820A974FC0096B18C /* JokesModel.m in Sources */,
+				EC229A8E20A9567C00D15750 /* MygifImageViewController.m in Sources */,
 				EC15798D20A581B00023FB1F /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

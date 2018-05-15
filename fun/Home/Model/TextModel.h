@@ -40,6 +40,8 @@
 @property(copy,nonatomic) NSString * title;
 @property(assign,nonatomic) NSInteger type;
 @property(copy,nonatomic) NSString * ct;
+//额外的辅助属性
+///@property (nonatomic,assign,readonly)CGFloat cellHeight;
 
 @end
 

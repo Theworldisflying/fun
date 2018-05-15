@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CBSSegmentViewController.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : CBSSegmentViewController
 
 @end
