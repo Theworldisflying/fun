@@ -161,6 +161,7 @@
         
         JokesCell * cell = [[JokesCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"commintCell"];
     [cell loadData:_dataArr[indexPath.row]];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
    

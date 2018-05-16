@@ -24,10 +24,12 @@
 #import "SVProgressHUD.h"
 #import "MBProgressHUD.h"
 
+#import "UIImageView+PlayGIF.h"
+
 
 #define JokesUrl  @"http://route.showapi.com/341-1"
 #define ImgUrl  @"http://route.showapi.com/107-33"
-#define GifUrl  @"http://route.showapi.com/341-3"
+#define GifUrl  @"http://lunchsoft.com/weibofun/weibo_list.php"
 #define Assin  @"6b0b01cb2feb465ab842b693d1fae670"
 #define Appid  64648
 

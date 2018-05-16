@@ -51,7 +51,7 @@
     [self.stepLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(5);
         make.left.equalTo(self).offset(5);
-        make.width.mas_equalTo(self.width-5);
+        make.width.mas_equalTo(Width-5);
         
     }];
     
@@ -74,36 +74,11 @@
 }
 -(void)loadData:(PictureModel *)model{
     self.stepLabel.text = model.title;
-//    self.dateLabel.text = model.img;
 
-    
-//    [self.imageView sd_setImageWithURL:[NSURL URLWithString:model.thumburl]];
-//    SDWebImageManager * manager = [SDWebImageManager sharedManager];
 
     [self.iamgeView sd_setImageWithURL:[NSURL URLWithString:model.thumburl] placeholderImage:[UIImage imageNamed:@"timg"]];
     
-//    [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:model.thumburl] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize,NSURL * url) {
-//
-//    } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-//
-////        [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-////            self.imageView.image = image;
-////        }];
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self.imageView setImage:image];
-//        });
-    
-//        [self setNeedsDisplay];
-        
-//    }];
-//    [[manager imageDownloader] downloadImageWithURL:imageURL options:0 progress:^(NSInteger   receivedSize, NSInteger expectedSize) {
-//        // progression tracking code
-//    }  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType,   BOOL finished, NSURL *imageURL) {
-//        if (image) {
-//            // do something with image
-//        }
-//    }];
-    
+
    
 }
 

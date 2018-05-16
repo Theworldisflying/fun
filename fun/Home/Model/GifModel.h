@@ -9,8 +9,19 @@
 #import <Foundation/Foundation.h>
 
 @interface GifModel : NSObject
-@property(copy,nonatomic) NSString * img;
-@property(copy,nonatomic) NSString * title;
-@property(assign,nonatomic) NSInteger type;
-@property(copy,nonatomic) NSString * ct;
+@property(copy,nonatomic) NSString * wid;
+@property(copy,nonatomic) NSString * update_time;
+@property(copy,nonatomic) NSString * wbody;
+@property(copy,nonatomic) NSString * comments;
+@property(copy,nonatomic) NSString * likes;
+@property(copy,nonatomic) NSString * wpic_s_width;
+@property(copy,nonatomic) NSString * wpic_s_height;
+@property(copy,nonatomic) NSString * wpic_m_width;
+@property(copy,nonatomic) NSString * wpic_m_height;
+@property(copy,nonatomic) NSString * is_gif;
+@property(copy,nonatomic) NSString * wpic_small;
+@property(copy,nonatomic) NSString * wpic_large;
+
+
+@property (nonatomic,assign)CGFloat cellHeight;
 @end

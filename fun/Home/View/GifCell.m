@@ -14,17 +14,20 @@
 
 #import <WebKit/WebKit.h>
 
-#import "PickerShowView.h"
+#import "ZRUploadProgressView.h"
+
+
 
 @interface GifCell()
 @property(strong,nonatomic) UILabel * titleLabel;
-@property(strong,nonatomic) UILabel  * urlLabel;
+//@property(strong,nonatomic) UILabel  * urlLabel;
 
 
 @property(strong,nonatomic) UIImageView * iamgeView;
 
 
-@property(strong,nonatomic) PickerShowView * gview;
+
+@property(strong,nonatomic) ZRUploadProgressView *circle1;
 
 @end
 @implementation GifCell
@@ -60,17 +63,20 @@
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(5);
         make.left.equalTo(self).offset(5);
-        make.width.mas_equalTo(self.width-5);
+        make.width.mas_equalTo(Width-5);
         
     }];
-    
-    self.urlLabel = [[UILabel alloc] init];
-    self.urlLabel.backgroundColor = [UIColor clearColor];
-    [self addSubview:_urlLabel];
+
     
     
-    self.iamgeView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 30, Width, 350)];
-    self.iamgeView.contentMode = UIViewContentModeScaleToFill;
+    self.iamgeView = [[UIImageView alloc] init];
+    _iamgeView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    _iamgeView.autoresizesSubviews = YES;
+    
+    _iamgeView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    
+  
     _iamgeView.userInteractionEnabled = YES;
     //    self.iamgeView.image
     [self addSubview:_iamgeView];
@@ -78,89 +84,96 @@
             make.top.equalTo(self.titleLabel.mas_bottom).with.offset(5);
             make.left.equalTo(self.titleLabel);
             make.width.mas_equalTo(Width);
-    
+
         }];
     
-    
-    UIButton * btn = [[UIButton alloc] init];
-    [btn setImage:[UIImage imageNamed:@"message_videoPlay_33x33_@1x"] forState:UIControlStateNormal];
-//    [btn setBackgroundImage:[UIImage imageNamed:@"message_videoPlay_33x33_@1x"] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.iamgeView addSubview:btn];
-    
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.iamgeView);
-        make.width.mas_equalTo(50);
-        make.height.mas_equalTo(50);
-    }];
+
     
     
 }
 
--(void)btnClick:(UIButton*)btn{
-//    btn.hidden = YES;
-    
-//    NSLog(@"%@=====",self.urlLabel.text);
-    
-    NSString * url = self.urlLabel.text;
-//        [self removeGif];
-    
-    
-    
-    
-    
-    
-    
-    PickerShowView * gview = [[PickerShowView alloc] initWithFrame:CGRectMake(0, 64, Width, Height)];
-    gview.backgroundColor = [UIColor whiteColor];
-    [gview setImageView:url];
-    self.gview = gview;
-    [[[UIApplication sharedApplication] keyWindow] addSubview:gview];
-    
-    
-    UIButton * gbtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
-    [gbtn setImage:[UIImage imageNamed:@"navigationButtonReturn_15x21_"] forState:UIControlStateNormal];
-    [gbtn addTarget:self action:@selector(gbtnCLick) forControlEvents:UIControlEventTouchUpInside];
-    [gview addSubview:gbtn];
-    
-    
 
-    
-//    FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
-//                    FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
-//                    imageView.animatedImage = image;
-//                    imageView.frame = CGRectMake(0, 230, Width, 320);
-//                    [gview addSubview:imageView];
-//    //读取gif图片数据
-//    NSData *gifData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
-//    //UIWebView生成
-//    
-//    WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 70, Width, Height-49-70)];
-////    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
-//    [webView loadData:gifData MIMEType:@"image/gif" characterEncodingName:@"UTF-8" baseURL:[NSURL URLWithString:@""]];
-//    webView.userInteractionEnabled = NO;
-//    [gview addSubview:webView];
-    
-    
-    
-    
-
-
-    
-}
--(void)gbtnCLick{
-    [self.gview removeFromSuperview];
-}
 
 
 -(void)loadData:(GifModel *)model{
-    self.titleLabel.text = model.title;
+    self.titleLabel.text = model.wbody;
 
   
     
-    self.urlLabel.text = model.img;
+//    self.urlLabel.text = model.img;
+    if ([model.is_gif isEqualToString:@"1"]) {
+        
+        NSString * url;
+        CGFloat w,h;
+//        if ([model.wpic_m_height floatValue] == model.cellHeight) {
+            url = model.wpic_large;
+            w = [model.wpic_m_width floatValue];
+            h = [model.wpic_m_height floatValue];
+//        }else{
+//            url = model.wpic_small;
+//            w = [model.wpic_s_width floatValue];
+//            h = [model.wpic_s_height floatValue];
+//        }
+        
+        self.circle1 = [[ZRUploadProgressView alloc] initWithFrame:CGRectMake(Width/2-Width/4, 60, Width/4, Width/4)];
+        self.circle1.progressColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
+        self.circle1.backgroundColor = [UIColor clearColor];
+        self.circle1.completionBlock = ^{
+            NSLog(@"uploadView - completion");
+        };
+        [self addSubview:self.circle1];
+        [self.circle1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self);
+            make.width.mas_equalTo(Width/4);
+            make.height.mas_equalTo(Width/4);
+            
+        }];
+
+        SDWebImageDownloader *downloader = [SDWebImageDownloader sharedDownloader];
+        [downloader downloadImageWithURL:[NSURL URLWithString:url]
+                                 options:0
+                                progress:^(NSInteger receivedSize, NSInteger expectedSize,NSURL* url) {
+                                   
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                     
+                                        
+                                         self.circle1.progress = (float)receivedSize/(float)expectedSize;
+                                      
+                                    });
+                                   
+                                    
+                                    
+                                   
+                                }
+                               completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+                                   if (image && finished) {
+                                       [self.circle1 removeFromSuperview];
+                                       FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:data];
+                                               FLAnimatedImageView*imageView = [[FLAnimatedImageView alloc] init];
+                                               imageView.animatedImage = image;
+                                               [self addSubview:imageView];
+                                               [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                                                   make.top.equalTo(self.titleLabel.mas_bottom).offset(5);
+                                                   make.width.mas_equalTo(Width);
+                                                   make.height.mas_equalTo(h);
+                                               }];
+                                 
+                                   }
+                               }];
+        
+
+    }else{
+//        NSString * url;
+//        if ([model.wpic_m_height floatValue] == model.cellHeight) {
+//            url = model.wpic_large;
+//        }else{
+//            url = model.wpic_small;
+//        }
+        
+       [self.iamgeView sd_setImageWithURL:[NSURL URLWithString:model.wpic_large] placeholderImage:[UIImage imageNamed:@"timg"]];
+    }
     
-    [self.iamgeView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:[UIImage imageNamed:@"timg"]];
+    
     
     
 }

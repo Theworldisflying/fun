@@ -24,16 +24,17 @@
 		EC1579AD20A59D910023FB1F /* UIView+XYMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1579A820A59D910023FB1F /* UIView+XYMenu.m */; };
 		EC1579AE20A59D910023FB1F /* XYMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1579A920A59D910023FB1F /* XYMenuItem.m */; };
 		EC1579AF20A59D910023FB1F /* XYMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1579AA20A59D910023FB1F /* XYMenuView.m */; };
+		EC1FFCC720AC1ABF00707C45 /* ZRUploadProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1FFCC320AC1ABE00707C45 /* ZRUploadProgressView.m */; };
+		EC1FFCC820AC1ABF00707C45 /* ZRCircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1FFCC620AC1ABF00707C45 /* ZRCircleProgressView.m */; };
+		EC1FFCCA20AC1AD200707C45 /* GifCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1FFCC920AC1AD200707C45 /* GifCell.m */; };
 		EC21003520A96C4A0096B18C /* AFNManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC21003420A96C4A0096B18C /* AFNManager.m */; };
 		EC21003820A974FC0096B18C /* JokesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC21003720A974FC0096B18C /* JokesModel.m */; };
 		EC21004020A97F5E0096B18C /* JokesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC21003F20A97F5E0096B18C /* JokesCell.m */; };
 		EC21004220A980620096B18C /* MyContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC21004120A980620096B18C /* MyContentViewController.m */; };
 		EC21004820A987220096B18C /* PictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC21004720A987220096B18C /* PictureModel.m */; };
 		EC21004B20A987860096B18C /* PictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC21004A20A987860096B18C /* PictureCell.m */; };
-		EC22003D20AA797000BA6263 /* GifCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22003C20AA797000BA6263 /* GifCell.m */; };
 		EC22004020AA7ABF00BA6263 /* GifModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22003F20AA7ABF00BA6263 /* GifModel.m */; };
 		EC22004320AA7D5A00BA6263 /* GetUrlImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22004220AA7D5A00BA6263 /* GetUrlImageSize.m */; };
-		EC22004D20AABCA700BA6263 /* PickerShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22004C20AABCA700BA6263 /* PickerShowView.m */; };
 		EC22005020AAC03C00BA6263 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22004F20AAC03C00BA6263 /* MBProgressHUD.m */; };
 		EC22005320AAC25200BA6263 /* CBSSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22005220AAC25200BA6263 /* CBSSegmentViewController.m */; };
 		EC22005C20AAC6EB00BA6263 /* CleanCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22005B20AAC6EB00BA6263 /* CleanCache.m */; };
@@ -98,6 +99,11 @@
 		EC1579A820A59D910023FB1F /* UIView+XYMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYMenu.m"; sourceTree = "<group>"; };
 		EC1579A920A59D910023FB1F /* XYMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMenuItem.m; sourceTree = "<group>"; };
 		EC1579AA20A59D910023FB1F /* XYMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMenuView.m; sourceTree = "<group>"; };
+		EC1FFCC320AC1ABE00707C45 /* ZRUploadProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRUploadProgressView.m; sourceTree = "<group>"; };
+		EC1FFCC420AC1ABE00707C45 /* ZRCircleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRCircleProgressView.h; sourceTree = "<group>"; };
+		EC1FFCC520AC1ABE00707C45 /* ZRUploadProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRUploadProgressView.h; sourceTree = "<group>"; };
+		EC1FFCC620AC1ABF00707C45 /* ZRCircleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRCircleProgressView.m; sourceTree = "<group>"; };
+		EC1FFCC920AC1AD200707C45 /* GifCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifCell.m; sourceTree = "<group>"; };
 		EC21003320A96C4A0096B18C /* AFNManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNManager.h; sourceTree = "<group>"; };
 		EC21003420A96C4A0096B18C /* AFNManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNManager.m; sourceTree = "<group>"; };
 		EC21003620A974FC0096B18C /* JokesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JokesModel.h; sourceTree = "<group>"; };
@@ -110,13 +116,10 @@
 		EC21004920A987860096B18C /* PictureCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PictureCell.h; sourceTree = "<group>"; };
 		EC21004A20A987860096B18C /* PictureCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureCell.m; sourceTree = "<group>"; };
 		EC22003B20AA797000BA6263 /* GifCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GifCell.h; sourceTree = "<group>"; };
-		EC22003C20AA797000BA6263 /* GifCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GifCell.m; sourceTree = "<group>"; };
 		EC22003E20AA7ABF00BA6263 /* GifModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GifModel.h; sourceTree = "<group>"; };
 		EC22003F20AA7ABF00BA6263 /* GifModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GifModel.m; sourceTree = "<group>"; };
 		EC22004120AA7D5A00BA6263 /* GetUrlImageSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetUrlImageSize.h; sourceTree = "<group>"; };
 		EC22004220AA7D5A00BA6263 /* GetUrlImageSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetUrlImageSize.m; sourceTree = "<group>"; };
-		EC22004B20AABCA700BA6263 /* PickerShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickerShowView.h; sourceTree = "<group>"; };
-		EC22004C20AABCA700BA6263 /* PickerShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickerShowView.m; sourceTree = "<group>"; };
 		EC22004E20AAC03C00BA6263 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		EC22004F20AAC03C00BA6263 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		EC22005120AAC25200BA6263 /* CBSSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBSSegmentViewController.h; sourceTree = "<group>"; };
@@ -193,6 +196,7 @@
 		EC15795420A57DFE0023FB1F /* fun */ = {
 			isa = PBXGroup;
 			children = (
+				EC1FFCB420AC176D00707C45 /* progressview */,
 				EC229A8020A93A6500D15750 /* Others */,
 				EC15798720A581800023FB1F /* Home */,
 				EC15795520A57DFE0023FB1F /* AppDelegate.h */,
@@ -245,9 +249,7 @@
 				EC21004920A987860096B18C /* PictureCell.h */,
 				EC21004A20A987860096B18C /* PictureCell.m */,
 				EC22003B20AA797000BA6263 /* GifCell.h */,
-				EC22003C20AA797000BA6263 /* GifCell.m */,
-				EC22004B20AABCA700BA6263 /* PickerShowView.h */,
-				EC22004C20AABCA700BA6263 /* PickerShowView.m */,
+				EC1FFCC920AC1AD200707C45 /* GifCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,6 +323,17 @@
 				EC1579AA20A59D910023FB1F /* XYMenuView.m */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		EC1FFCB420AC176D00707C45 /* progressview */ = {
+			isa = PBXGroup;
+			children = (
+				EC1FFCC420AC1ABE00707C45 /* ZRCircleProgressView.h */,
+				EC1FFCC620AC1ABF00707C45 /* ZRCircleProgressView.m */,
+				EC1FFCC520AC1ABE00707C45 /* ZRUploadProgressView.h */,
+				EC1FFCC320AC1ABE00707C45 /* ZRUploadProgressView.m */,
+			);
+			path = progressview;
 			sourceTree = "<group>";
 		};
 		EC229A8020A93A6500D15750 /* Others */ = {
@@ -528,12 +541,11 @@
 				EC1579AC20A59D910023FB1F /* UIBarButtonItem+XYMenu.m in Sources */,
 				EC21004020A97F5E0096B18C /* JokesCell.m in Sources */,
 				EC22005320AAC25200BA6263 /* CBSSegmentViewController.m in Sources */,
-				EC22004D20AABCA700BA6263 /* PickerShowView.m in Sources */,
 				EC22004320AA7D5A00BA6263 /* GetUrlImageSize.m in Sources */,
 				EC1579AB20A59D910023FB1F /* XYMenu.m in Sources */,
 				EC1579AF20A59D910023FB1F /* XYMenuView.m in Sources */,
 				EC22004020AA7ABF00BA6263 /* GifModel.m in Sources */,
-				EC22003D20AA797000BA6263 /* GifCell.m in Sources */,
+				EC1FFCCA20AC1AD200707C45 /* GifCell.m in Sources */,
 				EC15796520A57E010023FB1F /* main.m in Sources */,
 				EC22005020AAC03C00BA6263 /* MBProgressHUD.m in Sources */,
 				EC21004820A987220096B18C /* PictureModel.m in Sources */,
@@ -541,6 +553,7 @@
 				EC1579AE20A59D910023FB1F /* XYMenuItem.m in Sources */,
 				EC21004220A980620096B18C /* MyContentViewController.m in Sources */,
 				EC15799120A589D80023FB1F /* NetWorkingManager.m in Sources */,
+				EC1FFCC820AC1ABF00707C45 /* ZRCircleProgressView.m in Sources */,
 				EC15795720A57DFE0023FB1F /* AppDelegate.m in Sources */,
 				EC15799920A5914F0023FB1F /* TextModel.m in Sources */,
 				EC22005C20AAC6EB00BA6263 /* CleanCache.m in Sources */,
@@ -549,6 +562,7 @@
 				EC229A8320A93AAE00D15750 /* UIView+Extension.m in Sources */,
 				EC21003820A974FC0096B18C /* JokesModel.m in Sources */,
 				EC229A8E20A9567C00D15750 /* MygifImageViewController.m in Sources */,
+				EC1FFCC720AC1ABF00707C45 /* ZRUploadProgressView.m in Sources */,
 				EC15798D20A581B00023FB1F /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

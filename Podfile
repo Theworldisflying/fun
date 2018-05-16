@@ -6,4 +6,5 @@ pod 'SDWebImage', '~> 4.0'
 pod 'SVProgressHUD'
 pod 'Masonry'
 pod 'FLAnimatedImage', '~> 1.0'
+pod 'UIImageView-PlayGIF', '~> 1.0.1'
 end

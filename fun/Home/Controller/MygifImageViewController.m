@@ -29,7 +29,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.page = 1;
+    self.page = 0;
     [self setTableView];
     [self setupRefresh];
     
@@ -55,13 +55,11 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewTopics)];
     //    /自动更改透明度
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
-    _tableView.estimatedRowHeight = 300;
-    _tableView.rowHeight = UITableViewAutomaticDimension;
     //一进入就刷新
     [self.tableView.mj_header beginRefreshing];
     
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreComments)];
-//    self.tableView.mj_footer.hidden = YES;
+    //    self.tableView.mj_footer.hidden = YES;
     
     
 }
@@ -73,32 +71,38 @@
     [self getData];
 }
 -(void)loadMoreComments{
-    self.page += 1;
+    
+    
+    GifModel * getmodel = self.dataArr[_dataArr.count-1];
+    
     NSMutableDictionary * para = [[NSMutableDictionary alloc] init];
-    para[@"showapi_appid"] = @(64648);
-    para[@"showapi_sign"] = Assin;
-    para[@"page"] = @(_page);
-    para[@"maxResult"] = @(10);
+    para[@"apiver"] = @10901;
+    para[@"category"] = @"weibo_pics";
+    para[@"page"] = @(-1);
+    para[@"page_size"] = @(30);
+    para[@"max_timestamp"] = getmodel.update_time;
+    para[@"atest_viewed_ts"] = @(-1);
     
-    
-    [AFNManager postWithUrlString:GifUrl parameters:para success:^(id data){
-        
-        
+    [AFNManager getWithUrlString:GifUrl parameter:para success:^(id data){
         NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-//        NSLog(@"===1===%@",dic);
+        //        NSLog(@"===1===%@",dic);
         [self.tableView.mj_footer endRefreshing];
-        NSDictionary * getbody = dic[@"showapi_res_body"];
-        NSArray * arr = [GifModel mj_objectArrayWithKeyValuesArray:getbody[@"contentlist"]];
+        //        NSLog(@"===1===%@",dic);
         
-//        self.dataArr = [NSMutableArray arrayWithCapacity:30];
+        //        NSDictionary * getbody = dic[@"showapi_res_body"];
+        NSArray * arr = [GifModel mj_objectArrayWithKeyValuesArray:dic[@"items"]];
+        
         [self.dataArr addObjectsFromArray:arr];
         [self.tableView reloadData];
         
+        if (dic != nil) {
+          self.page += 1;
+        }
         
         
-    } failure:^(NSError * error){
+        
+    } failure:^(NSError *error){
         [self.tableView.mj_footer endRefreshing];
-        
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:[NSString stringWithFormat:@"%@",error] preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction * sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction*action){}];
         [alert addAction:sure];
@@ -107,37 +111,38 @@
 }
 #pragma mark-网络请求
 -(void)getData{
+//    http://lunchsoft.com/weibofun/weibo_list.php?apiver=10901&category=weibo_pics&page=-1&page_size=30
+    NSMutableDictionary * para1 = [[NSMutableDictionary alloc] init];
+    para1[@"apiver"] = @10901;
+    para1[@"category"] = @"weibo_pics";
+    para1[@"page"] = @(-1);
+    para1[@"page_size"] = @(30);
+//    para1[@"ax_timestamp"] = @(-1);
+//    para1[@"atest_viewed_ts"] = [NSString stringWithFormat:@"%.0f",[[NSDate date] timeIntervalSince1970]];
     
-    //http://route.showapi.com/341-1?showapi_appid=64648&showapi_sign=6b0b01cb2feb465ab842b693d1fae670&page=1&maxResult=10
-    //    NetWorkingManager * request = [NetWorkingManager shareManager];
-    NSMutableDictionary * para = [[NSMutableDictionary alloc] init];
-    para[@"showapi_appid"] = @(64648);
-    para[@"showapi_sign"] = Assin;
-    para[@"page"] = @(1);
-    para[@"maxResult"] = @(10);
-    
-    
-    [AFNManager postWithUrlString:GifUrl parameters:para success:^(id data){
-       [self.tableView.mj_header endRefreshing];
-        
+    [AFNManager getWithUrlString:GifUrl parameter:para1 success:^(id data){
         NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-//        NSLog(@"===1===%@",dic);
+        //        NSLog(@"===1===%@",dic);
+        [self.tableView.mj_header endRefreshing];
+        //        NSLog(@"===1===%@",dic);
         
-        NSDictionary * getbody = dic[@"showapi_res_body"];
-        NSArray * arr = [GifModel mj_objectArrayWithKeyValuesArray:getbody[@"contentlist"]];
+        //        NSDictionary * getbody = dic[@"showapi_res_body"];
+        NSArray * arr = [GifModel mj_objectArrayWithKeyValuesArray:dic[@"items"]];
         
         self.dataArr = [NSMutableArray arrayWithArray:arr];
         [self.tableView reloadData];
         
-       
+        [self.tableView.mj_header endRefreshing];
         
-    } failure:^(NSError * error){
+        
+    } failure:^(NSError *error){
         [self.tableView.mj_header endRefreshing];
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:[NSString stringWithFormat:@"%@",error] preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction * sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction*action){}];
         [alert addAction:sure];
         [self presentViewController:alert animated:true completion:nil];
     }];
+   
     //    [request GET:JokesUrl parameters:para progress:^(NSProgress*progress){} success:^(NSURLSessionDataTask * data,id n){
     //        NSLog(@"===%@",data);
     //        NSLog(@"==%@===",n);
@@ -164,22 +169,29 @@
     
     
     
-    GifCell * cell = [[GifCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"commintCell"];
+    GifCell * cell = [[GifCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"gifCell"];
     [cell loadData:_dataArr[indexPath.row]];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
     
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-//    GifModel * model = _dataArr[indexPath.row];
-
-//      dispatch_async(<#dispatch_queue_t  _Nonnull queue#>, <#^(void)block#>)
-
-//    return [GetUrlImageSize getImageSizeWithURL:model.img].height + 30;
-
-    return 350;
+    
+    GifModel * model = _dataArr[indexPath.row];
+//    if ([model.is_gif isEqualToString:@"0"]) {
+//        CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width -4 *10, MAXFLOAT);
+//        //    CGFloat textH = [topic.text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:maxSize].height;
+//        //计算文字高度
+//        CGFloat textH = [model.wbody boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:20]} context:nil].size.height;
+//        
+//        return [GetUrlImageSize getImageSizeWithURL:model.wpic_large].height + 10 + textH;
+//    }
+  
+    
+    return model.cellHeight + 10;
+    
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -192,15 +204,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
 @end

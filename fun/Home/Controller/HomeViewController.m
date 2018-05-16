@@ -50,7 +50,7 @@
     //设置各个标签名字
     self.cbs_titleArray = @[@"段子",
                             @"图片",
-                            @"动图"];
+                            @"趣图"];
     //设置各个标签对应的ViewController，如果数量不对会崩溃
     self.cbs_viewArray = @[@"MyContentViewController", @"MyImageViewController", @"MygifImageViewController"];
     self.cbs_Type = CBSSegmentHeaderTypeScroll;

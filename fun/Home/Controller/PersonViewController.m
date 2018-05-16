@@ -9,7 +9,16 @@
 #import "PersonViewController.h"
 #import "CleanCache.h"
 
-@interface PersonViewController ()
+@interface PersonViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (strong,nonatomic) UITableView * tableView;
+
+@property (strong,nonatomic) NSMutableArray * getDataArr;
+
+@property (strong,nonatomic) NSMutableArray * cleanArr;
+
+@property (strong,nonatomic) NSMutableArray * totalArr;
+
 @property(strong,nonatomic) UILabel * cacheLabel;
 @end
 
@@ -19,9 +28,72 @@
     [super viewDidLoad];
     self.title = @"个人中心";
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    
+    _getDataArr = [[NSMutableArray alloc] initWithObjects:@"1", nil];
+    _cleanArr = [[NSMutableArray alloc] initWithObjects:@"清除缓存", nil];
+    _totalArr = [[NSMutableArray alloc] init];
+    [_totalArr insertObject:_cleanArr atIndex:0];
+    [_totalArr addObject:_getDataArr];
+    
+    
+    
     [self setUI];
 }
 
+#pragma mark-UITableView
+-(void)setTableView{
+    UITableView * tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height-49) style:UITableViewStyleGrouped];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.showsVerticalScrollIndicator = NO;
+    tableView.showsHorizontalScrollIndicator = NO;
+    tableView.estimatedRowHeight = 60;
+    tableView.rowHeight = UITableViewAutomaticDimension;
+    tableView.scrollEnabled = NO;
+    //    [tableView registerClass:[HistoryTableViewCell class] forCellReuseIdentifier:TableCellId];
+    self.tableView = tableView;
+    [self.view addSubview:tableView];
+    
+    
+    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.cacheLabel);
+        make.top.equalTo(self.cacheLabel.mas_bottom).offset(100);
+        //        make.center.equalTo(self.cacheLabel.mas_bottom).offset(20);
+        make.width.mas_equalTo(Width/3);
+        make.height.mas_equalTo(40);
+    }];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 60;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return _totalArr.count;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return _getDataArr.count;
+}
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"PersonCell"];
+    }
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+   
+}
+
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    //    self.tableView.contentSize = CGSizeMake(0, Height*1.5);
+}
+
+#pragma mark--UI
 -(void)setUI{
     
     
