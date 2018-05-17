@@ -47,7 +47,7 @@
  
     
     self.dateLabel = [[UILabel alloc] init];
-    [self setLabel:_dateLabel font:20 txtColor:[UIColor grayColor]];
+    [self setLabel:_dateLabel font:16 txtColor:[UIColor grayColor]];
     [self addSubview:_dateLabel];
     
     [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -59,7 +59,13 @@
 }
 -(void)loadData:(JokesModel *)model{
     self.stepLabel.text = model.title;
+    
     self.dateLabel.text = model.text;
+    if (USERDEFAULT_float(CONTENT_FONT) != 0) {
+       self.dateLabel.font = Font(USERDEFAULT_float(CONTENT_FONT));
+    }
+    
+    
 }
 
 

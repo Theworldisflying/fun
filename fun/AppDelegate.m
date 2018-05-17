@@ -23,10 +23,31 @@
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:home];
     
     self.window.rootViewController = nav;
+    
+    
+    //测试 初始化文字大小
+    [self initFontSize];
+    
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
-
+-(void)initFontSize{
+    
+    float titleFont = USERDEFAULT_float(CONTENT_FONT);
+    if (titleFont==0) {
+        //一次性代码
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            //初始化
+            NSUserDefaults *fontDefaults = [NSUserDefaults standardUserDefaults];
+            //把所用的字体值保存下来
+            [fontDefaults setFloat:FONT_CONTENT_SIZE forKey:CONTENT_FONT];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        });
+        
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

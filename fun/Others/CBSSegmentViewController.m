@@ -63,10 +63,16 @@
 #pragma mark - private
 - (void)initViewController:(NSInteger)index
 {
+    
+    CGRect StatusRect = [[UIApplication sharedApplication] statusBarFrame];
+    
+    //标题栏
+    
+    CGRect NavRect = self.navigationController.navigationBar.frame;
     if ([self.isFinishedArray[index] integerValue] == 0) {
         Class className = NSClassFromString(self.cbs_viewArray[index]);
         UIViewController * viewController = [[className alloc] init];
-        [viewController.view setFrame:CGRectMake(self.width*index, 64, self.width, self.height - self.cbs_buttonHeight)];
+        [viewController.view setFrame:CGRectMake(self.width*index, StatusRect.size.height + NavRect.size.height, self.width, self.height - self.cbs_buttonHeight)];
         [self addChildViewController:viewController];
         [self.backView addSubview:viewController.view];
         self.isFinishedArray[index] = @1;
@@ -89,9 +95,15 @@
 
 - (void)addScrollHeader:(NSArray *)titleArray
 {
-    self.headerView.frame = CGRectMake(0, 64, self.width, self.cbs_buttonHeight);
+    CGRect StatusRect = [[UIApplication sharedApplication] statusBarFrame];
+    
+    //标题栏
+    
+    CGRect NavRect = self.navigationController.navigationBar.frame;
+    self.headerView.frame = CGRectMake(0, StatusRect.size.height + NavRect.size.height, self.width, self.cbs_buttonHeight);
     self.headerView.contentSize = CGSizeMake(self.cbs_buttonWidth*titleArray.count, self.cbs_buttonHeight);
     [self.view addSubview:self.headerView];
+   
     
     for (NSInteger index = 0; index < titleArray.count; index++) {
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.cbs_buttonWidth*index, 0, self.cbs_buttonWidth, self.cbs_buttonHeight)];
@@ -193,16 +205,16 @@
         
         if (location <= 0) {
             [UIView animateWithDuration:.3 animations:^{
-                _headerView.contentOffset = CGPointMake(0, _headerSelectedView.contentOffset.y);
+                self.headerView.contentOffset = CGPointMake(0, self.headerSelectedView.contentOffset.y);
             }];
         }else if (location >= _headerView.contentSize.width - self.width) {
             [UIView animateWithDuration:.3 animations:^{
-                _headerView.contentOffset = CGPointMake(_headerView.contentSize.width - self.width, _headerSelectedView.contentOffset.y);
+                self.headerView.contentOffset = CGPointMake(self.headerView.contentSize.width - self.width, self.headerSelectedView.contentOffset.y);
             }];
         }else {
             if (_headerView.contentOffset.x != location) {
                 [UIView animateWithDuration:.3 animations:^{
-                    _headerView.contentOffset = CGPointMake(location, _headerSelectedView.contentOffset.y);
+                    self.headerView.contentOffset = CGPointMake(location, self.headerSelectedView.contentOffset.y);
                 }];
             }
         }

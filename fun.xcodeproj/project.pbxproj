@@ -24,6 +24,8 @@
 		EC1579AD20A59D910023FB1F /* UIView+XYMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1579A820A59D910023FB1F /* UIView+XYMenu.m */; };
 		EC1579AE20A59D910023FB1F /* XYMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1579A920A59D910023FB1F /* XYMenuItem.m */; };
 		EC1579AF20A59D910023FB1F /* XYMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1579AA20A59D910023FB1F /* XYMenuView.m */; };
+		EC1DDA7520AD1E51001C2764 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1DDA7420AD1E51001C2764 /* AboutViewController.m */; };
+		EC1DDA7820AD2C37001C2764 /* SetFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1DDA7720AD2C37001C2764 /* SetFontViewController.m */; };
 		EC1FFCC720AC1ABF00707C45 /* ZRUploadProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1FFCC320AC1ABE00707C45 /* ZRUploadProgressView.m */; };
 		EC1FFCC820AC1ABF00707C45 /* ZRCircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1FFCC620AC1ABF00707C45 /* ZRCircleProgressView.m */; };
 		EC1FFCCA20AC1AD200707C45 /* GifCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1FFCC920AC1AD200707C45 /* GifCell.m */; };
@@ -99,6 +101,10 @@
 		EC1579A820A59D910023FB1F /* UIView+XYMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYMenu.m"; sourceTree = "<group>"; };
 		EC1579A920A59D910023FB1F /* XYMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMenuItem.m; sourceTree = "<group>"; };
 		EC1579AA20A59D910023FB1F /* XYMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMenuView.m; sourceTree = "<group>"; };
+		EC1DDA7320AD1E51001C2764 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		EC1DDA7420AD1E51001C2764 /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		EC1DDA7620AD2C37001C2764 /* SetFontViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetFontViewController.h; sourceTree = "<group>"; };
+		EC1DDA7720AD2C37001C2764 /* SetFontViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetFontViewController.m; sourceTree = "<group>"; };
 		EC1FFCC320AC1ABE00707C45 /* ZRUploadProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRUploadProgressView.m; sourceTree = "<group>"; };
 		EC1FFCC420AC1ABE00707C45 /* ZRCircleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRCircleProgressView.h; sourceTree = "<group>"; };
 		EC1FFCC520AC1ABE00707C45 /* ZRUploadProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRUploadProgressView.h; sourceTree = "<group>"; };
@@ -284,6 +290,10 @@
 				EC229A8D20A9567C00D15750 /* MygifImageViewController.m */,
 				EC22005D20AAC75700BA6263 /* PersonViewController.h */,
 				EC22005E20AAC75700BA6263 /* PersonViewController.m */,
+				EC1DDA7320AD1E51001C2764 /* AboutViewController.h */,
+				EC1DDA7420AD1E51001C2764 /* AboutViewController.m */,
+				EC1DDA7620AD2C37001C2764 /* SetFontViewController.h */,
+				EC1DDA7720AD2C37001C2764 /* SetFontViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -554,12 +564,14 @@
 				EC21004220A980620096B18C /* MyContentViewController.m in Sources */,
 				EC15799120A589D80023FB1F /* NetWorkingManager.m in Sources */,
 				EC1FFCC820AC1ABF00707C45 /* ZRCircleProgressView.m in Sources */,
+				EC1DDA7820AD2C37001C2764 /* SetFontViewController.m in Sources */,
 				EC15795720A57DFE0023FB1F /* AppDelegate.m in Sources */,
 				EC15799920A5914F0023FB1F /* TextModel.m in Sources */,
 				EC22005C20AAC6EB00BA6263 /* CleanCache.m in Sources */,
 				EC229A8B20A9566D00D15750 /* MyImageViewController.m in Sources */,
 				EC22005F20AAC75700BA6263 /* PersonViewController.m in Sources */,
 				EC229A8320A93AAE00D15750 /* UIView+Extension.m in Sources */,
+				EC1DDA7520AD1E51001C2764 /* AboutViewController.m in Sources */,
 				EC21003820A974FC0096B18C /* JokesModel.m in Sources */,
 				EC229A8E20A9567C00D15750 /* MygifImageViewController.m in Sources */,
 				EC1FFCC720AC1ABF00707C45 /* ZRUploadProgressView.m in Sources */,
@@ -730,6 +742,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/fun/Home/PrefixHeader.pch";
 				INFOPLIST_FILE = fun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -750,6 +763,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/fun/Home/PrefixHeader.pch";
 				INFOPLIST_FILE = fun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

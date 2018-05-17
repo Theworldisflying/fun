@@ -24,7 +24,6 @@
 #import "SVProgressHUD.h"
 #import "MBProgressHUD.h"
 
-#import "UIImageView+PlayGIF.h"
 
 
 #define JokesUrl  @"http://route.showapi.com/341-1"
@@ -35,6 +34,16 @@
 
 #define Height [UIScreen mainScreen].bounds.size.height
 #define Width [UIScreen mainScreen].bounds.size.width
+
+
+#define     Font(F)             [UIFont systemFontOfSize:(F)]
+
+#define USERDEFAULT_float(key) [[NSUserDefaults standardUserDefaults] floatForKey:key]
+
+
+#define ALL_FONT_CHANGE                 @"allFontChange"
+#define    CONTENT_FONT                 @"contentFontSize"
+static    float FONT_CONTENT_SIZE  =        16.0;
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

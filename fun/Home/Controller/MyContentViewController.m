@@ -22,6 +22,7 @@
 @implementation MyContentViewController
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    [self setupRefresh];
 }
 
 - (void)viewDidLoad {
@@ -32,15 +33,36 @@
     [self setTableView];
     [self setupRefresh];
     
+    //接收通知
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(fontSizeChange) name:ALL_FONT_CHANGE object:nil];
+    
    
 }
+
+-(void)fontSizeChange{
+//    [self.tableView reloadData];
+    
+//    [self.tableView beginUpdates];
+//    [self.tableView endUpdates];
+    
+}
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 -(void)setTableView{
     self.tableView = [[UITableView alloc] initWithFrame: CGRectMake(0, 0, Width, Height-49) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.showsHorizontalScrollIndicator = NO;
-    _tableView.estimatedRowHeight = 60;
+    // iOS11适配
+    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedSectionHeaderHeight = 0;
+    self.tableView.estimatedSectionFooterHeight = 0;
+    
+
     _tableView.rowHeight = UITableViewAutomaticDimension;
     //注册
 //    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([JokesCell class]) bundle:nil] forCellReuseIdentifier:@"commintCell"];

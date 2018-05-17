@@ -16,14 +16,33 @@
         //文字的Y值
         CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width -4 *10, MAXFLOAT);
         //    CGFloat textH = [topic.text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:maxSize].height;
-        //计算文字高度
-        CGFloat textH = [self.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:20]} context:nil].size.height;
-        CGFloat titleH = [self.title boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:20]} context:nil].size.height;
         
-        _cellHeight += textH + titleH + 10;
+        if( USERDEFAULT_float(CONTENT_FONT) != 0){
+            //计算文字高度
+            CGFloat textH = [self.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : Font(USERDEFAULT_float(CONTENT_FONT))} context:nil].size.height;
+            CGFloat titleH = [self.title boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:20]} context:nil].size.height;
+            _cellHeight += textH + titleH + 10;
+        }else{
+            //计算文字高度
+            CGFloat textH = [self.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]} context:nil].size.height;
+            CGFloat titleH = [self.title boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:20]} context:nil].size.height;
+            _cellHeight += textH + titleH + 10;
+        }
         
         
+        
+        
+
     }
     return _cellHeight;
 }
+- (NSString *)text{
+//    if (!_text) {
+        if ([_text containsString:@"<br />"]) {
+            [_text stringByReplacingOccurrencesOfString:@"<br />" withString:@""];
+        }
+//    }
+    return _text;
+}
+
 @end

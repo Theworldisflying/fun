@@ -41,8 +41,10 @@
     _tableView.dataSource = self;
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.showsHorizontalScrollIndicator = NO;
-    _tableView.estimatedRowHeight = 60;
-    _tableView.rowHeight = UITableViewAutomaticDimension;
+    // iOS11适配
+    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedSectionHeaderHeight = 0;
+    self.tableView.estimatedSectionFooterHeight = 0;
     //注册
     //    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([JokesCell class]) bundle:nil] forCellReuseIdentifier:@"commintCell"];
     //    [self.tableView registerClass:[JokesCell class] forCellReuseIdentifier:@"commintCell"];
